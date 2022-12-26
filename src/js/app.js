@@ -1,0 +1,7 @@
+import './base.js'
+import './plugins/modal-plugin.js'
+import './video.js'
+import './sound.js'
+import './modal.js'
+import './tg.js'
+import './tabs.js'

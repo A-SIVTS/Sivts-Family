@@ -1,0 +1,272 @@
+// colors constants
+
+$white: #FFFFFF;
+$black: #2D2D2D;
+$yellow: #F5B81B;
+
+.modal__overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgb(0, 0, 0, .5);
+	z-index: 100;
+	display: none;
+	overflow: auto;
+
+	.modal__window{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: $black;
+		width: 1000px;
+		border: 1px solid $white;
+		z-index: 100;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 100px 0;
+
+		@media(max-width: 1280px) {
+			width: 800px;
+		}
+
+		@media(max-width: 1020px) {
+			width: 600px;
+		}
+
+		@media(max-width: 740px) {
+			width: 300px;
+		}
+
+		.modal__close{
+			position: absolute;
+			top: 40px;
+			right: 40px;
+			width: 30px;
+			height: 30px;
+			cursor: pointer;
+
+			@media(max-width: 740px) {
+				top: 40px;
+				right: 30px;
+			}
+		}
+
+		.modal__close:hover{
+			opacity: 0.6;
+			transition: all 0.3s ease-in;
+		}
+
+		.modal__close::before{
+			content: '';
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: rotate(45deg);
+			background-color: $white;
+		}
+		.modal__close::after{
+			content: '';
+			width: 100%;
+			height: 2px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: rotate(-45deg);
+			background-color: $white;
+		}
+
+		.modal__header{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.modal__title{
+				font-family: 'Cormorant';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 100px;
+				line-height: 130%;
+				text-transform: uppercase;
+				color: $yellow;
+
+				@media(max-width: 1280px) {
+					font-size: 70px;
+				}
+
+				@media(max-width: 1020px) {
+					font-size: 50px;
+				}
+
+				@media(max-width: 740px) {
+					font-size: 30px;
+				}
+			}
+
+			.modal__subtitle{
+				font-family: 'OpenSans';
+				font-style: normal;
+				font-weight: 400;
+				font-size: 18px;
+				line-height: 130%;
+				color: $white;
+				max-width: 480px;
+				margin-top: 20px;
+				text-align: center;
+
+				@media(max-width: 1020px) {
+					font-size: 14px;
+					max-width: 360px;
+				}
+
+				@media(max-width: 1020px) {
+					font-size: 12px;
+					max-width: 250px;
+				}
+
+				a {
+					color: $yellow;
+				}
+			}
+		}
+
+		.modal__content{
+			margin-top: 40px;
+
+			.modal__form{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 480px;
+
+				@media(max-width: 1020px) {
+					width: 360px;
+				}
+
+				@media(max-width: 740px) {
+					width: 300px;
+				}
+
+				.modal__input{
+					height: 60px;
+					background-color: $black;
+					border-bottom: 1px dashed $white;
+					font-family: 'OpenSans';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 30px;
+					line-height: 130%;
+					color: rgba(255, 255, 255, 0.6);
+
+					@media(max-width: 1020px) {
+						height: 45px;
+						font-size: 20px;
+						margin-bottom: 20px;
+
+					}
+
+					.modal__input:last-child{
+						@media(max-width: 1020px) {
+							margin: 0;
+						}
+					}
+				}
+
+				._icon-arrow-up-right::after {
+					font-size: 2rem;
+				}
+
+				.modal__btn {
+					align-items: center;
+					font-family: 'Cormorant';
+					font-style: normal;
+					font-weight: 400;
+					font-size: 50px;
+					line-height: 130%;
+					text-transform: uppercase;
+					color: $yellow;
+					background: none;
+					margin-top: 40px;
+
+					@media(max-width: 1020px) {
+						font-size: 35px;
+					}
+
+					@media(max-width: 740px) {
+						font-size: 20px;
+					}
+				}
+
+				._icon-arrow-up-right:after {
+					content: "\e900";
+
+					@media(max-width: 1020px) {
+						font-size: 1.5rem;
+					}
+
+					@media(max-width: 740px) {
+						font-size: 1rem;
+					}
+				}
+
+
+
+				.modal__btn:hover {
+					color: $white;
+					transition: all 0.3s ease-in;
+				}
+			}
+
+			.modal__check {
+				position: absolute;
+				bottom: 50px;
+				left: 50%;
+				transform: translateX(-50%);
+				color: $yellow;
+				font-family: 'OpenSans';
+				padding-left: 1.2em;
+
+					@media(max-width: 740px) {
+						font-size: 12px;
+						bottom: 30px;
+					}
+
+
+				.modal__check-box{
+					width: 0.6em;
+					height: 0.6em;
+					box-shadow: 0 0 0 0.1em $yellow;
+					border-radius: 0.05em;
+					background-color: $black;
+					position: absolute;
+					left: 0;
+					top: 0;
+					margin-right: -1.2em;
+					margin-top: 0.2em;
+
+				
+				}
+
+				.modal__checkbox:checked + .modal__check-box {
+					background-color: $yellow;
+					background-image: url(../img/check.svg);
+				}
+			}
+
+
+
+		}
+
+			
+	}
+}
+
+.modal__overlay.show{
+	display: block;
+}
